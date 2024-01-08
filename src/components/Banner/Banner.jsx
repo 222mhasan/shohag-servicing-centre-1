@@ -2,7 +2,7 @@
 const Banner = () => {
     return (
         <div>
-            <div className="carousel max-w-full max-h-screen">
+            <div className="carousel max-w-fit h-[450px]">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src="https://i.ibb.co/GMxVKPb/harley-davidson-ee-TJKC-wz34-unsplash.jpg" className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
