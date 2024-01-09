@@ -50,31 +50,40 @@ const AppliedJobs = () => {
     }, [jobs])
 
     return (
-        <div className="relative">
-            <h1 className="text-2xl">Applied Jobs : {appliedJobs.length}</h1>
+        <div className="py-10 container mx-auto border-2">
 
-            <div className="relative  -right-96">
-                <details className="dropdown">
-                    <summary className="m-1 btn">Sort By</summary>
-                    <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                        <li onClick={() => handleJobsFilter('All')}><a>All</a></li>
-                        <li onClick={() => handleJobsFilter('Remote')}><a>Remote</a></li>
-                        <li onClick={() => handleJobsFilter('Onsite')}><a>Onsite</a></li>
+            <div className="flex ">
+
+                {/* left side */}
+                <div className="w-1/2">
+                    <h1 className="text-2xl text-center mb-4 border-b-2">Applied Jobs : {appliedJobs.length}</h1>
+                    <ul>
+                        {
+                            displayJobs.map(job => <li key={job.id}>
+                                <span className="border-2">
+                                    {job.job_title} ||
+                                    {job.company_name} ||
+                                    {job.remote_or_onsite}
+                                </span>
+                            </li>
+                            )}
                     </ul>
-                </details>
+                </div>
+
+                {/* right side  */}
+                <div className="">
+                    <details className="dropdown">
+                        <summary className="btn">Sort By</summary>
+                        <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                            <li onClick={() => handleJobsFilter('All')}><a>All</a></li>
+                            <li onClick={() => handleJobsFilter('Remote')}><a>Remote</a></li>
+                            <li onClick={() => handleJobsFilter('Onsite')}><a>Onsite</a></li>
+                        </ul>
+                    </details>
+                </div>
             </div>
 
-            <ul>
-                {
-                    displayJobs.map(job => <li key={job.id}>
-                        <span className="border-2">
-                            {job.job_title} ||
-                            {job.company_name} ||
-                            {job.remote_or_onsite}
-                        </span>
-                    </li>
-                    )}
-            </ul>
+
         </div>
     );
 };

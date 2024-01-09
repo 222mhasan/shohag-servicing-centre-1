@@ -11,8 +11,8 @@ const Header = () => {
     </>
 
     return (
-        <div >
-            <div className="navbar bg-black text-white py-3">
+        <div className="w-full bg-black px-4">
+            <div className="navbar text-white py-3">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -24,11 +24,11 @@ const Header = () => {
                             }
                         </ul>
                     </div>
-                    <Link to='/'>
-                        <a className="btn bg-gradient-to-r from-zinc-600 to-zinc-800 text-white border-none text-xl relative left-64 md:left-8">Shohag</a>
+                    <Link className="relative md:justify-start" to='/'>
+                        <a className="text-white border-none text-xl">Shohag Servicing Center </a>
                     </Link>
                 </div>
-                <div className="navbar-center hidden lg:flex relative -right-52">
+                <div className="navbar-center hidden lg:flex relative ">
                     <ul className="menu menu-horizontal px-1 gap-5 text-xl">
                         {
                             links
